@@ -125,10 +125,10 @@ export class AppComponent implements OnInit {
         })
       )
       .subscribe((e: any) => {
+        console.log('SELECT');
         this.closePopup();
         const selection = window.getSelection();
-        console.log(e);
-        console.log(selection);
+        console.log(selection.toString());
         if (selection.toString() !== '') {
           const selector = this.getUniqueSelector(e.target);
           const text = selection.toString();
