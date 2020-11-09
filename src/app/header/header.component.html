@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="header">
+        <div class="company" (click)="openMenu()">
+            <div class="company__logo">
+                <span>R</span>
+            </div>
+            <div class="company__name">
+                <span>digital <br> library</span> 
+            </div>
+        </div>
+        <ng-container *ngIf="showMenu">
+            <div class="menu" *ngIf="!searchOpened">
+                <ul>
+                    <li>
+                        <a *ngIf="mobile" (click)="closeMenu()">CLOSE MENU</a>
+                    </li>
+                    <li>
+                        <a>Browse</a>
+                    </li>
+                    <li>
+                        <a>A-Z Index</a>
+                    </li>
+                    <li>
+                        <a>About</a>
+                    </li>
+                    <li>
+                        <a>FAQs</a>
+                    </li>
+                    <li>
+                        <a>User Guide</a>
+                    </li>
+                </ul>
+            </div>
+        </ng-container>
+        <input type="text" class="searchInput" *ngIf="searchOpened" placeholder="Search">
+        <div class="actions">
+            <button class="search" *ngIf="!searchOpened" (click)="openSearchBar()">
+                <i class="material-icons">search</i>
+            </button>
+            <button class="search" *ngIf="searchOpened" (click)="closeSearchBar()">
+                <i class="material-icons">clear</i>
+            </button>
+            <button class="search">
+                <i class="material-icons">account_circle</i>
+            </button>
+        </div>
+    </div>
+</div>

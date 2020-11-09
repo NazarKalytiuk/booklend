@@ -1,0 +1,10 @@
+<button class="prev" [disabled]="startIndex === 0" (click)="prev()"><i class="material-icons">keyboard_arrow_left</i></button>
+<div class="list">
+    <div class="card" *ngFor="let item of show">
+        <img [src]="item.image" [alt]="item.text">
+        <p>
+            {{item.text}}
+        </p>
+    </div>
+</div>
+<button class="next"[disabled]="startIndex === items.length - 1" (click)="next()"><i class="material-icons">keyboard_arrow_right</i></button>

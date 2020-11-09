@@ -1,1 +1,351 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f4f5f7;
+}
+
+.container {
+  max-width: 940px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.section {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  & h1 {
+    width: 100%;
+    font-size: 72px;
+    font-family: "SF Pro Display";
+  }
+}
+.row {
+  margin: 20px 0;
+  display: flex;
+  width: 100%;
+  & .card,
+  .column {
+    margin: 0 10px;
+    min-width: 50%;
+  }
+  & .card:first-child,
+  .column:first-child {
+    margin-right: 10px;
+    margin-left: 0;
+  }
+  & .card:last-child,
+  .column:last-child {
+    margin-right: 0;
+  }
+}
+.column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  & .card {
+    width: 100%;
+    margin: 10px 0;
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 24px;
+  background-color: #ffffff;
+  width: 100%;
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+  & .left,
+  .right {
+    width: 50%;
+  }
+  & .icon {
+    font-size: 36px;
+    margin-bottom: 20px;
+    &.icon-red {
+      color: red;
+    }
+    &.icon-blue {
+      color: blue;
+    }
+    &.icon-green {
+      color: green;
+    }
+    &.icon-yellow {
+      color: yellow;
+    }
+  }
+  &-red {
+    background-color: rgb(208, 2, 27);
+    padding: 12px;
+    color: white;
+    box-shadow: 0px 10px 20px 0px rgba(208, 2, 27, 0.3);
+    & div {
+      display: flex;
+      align-items: center;
+      & .icon {
+        margin: 0 12px;
+      }
+    }
+  }
+  &-dark {
+    background-color: rgb(14, 30, 49);
+    & .highlight {
+      color: rgb(80, 227, 194) !important;
+    }
+    & p {
+      color: white;
+    }
+    & button.btn {
+      background-color: rgba(80, 227, 194, 0.1);
+      &:hover {
+        background-color: rgba(80, 227, 194, 1);
+      }
+      & span {
+        color: rgb(80, 227, 194);
+      }
+    }
+    & h2 {
+      color: rgb(80, 227, 194);
+    }
+  }
+  & .content {
+    display: flex;
+    flex-direction: column;
+  }
+  & .quote {
+    font-size: 24px;
+    color: #d0021b;
+    font-family: "SF Pro Display Light Italic";
+  }
+  & h2 {
+    font-size: 48px;
+    font-family: "SF Pro Display Heavy";
+    margin: 5px 0;
+  }
+  & .highlight {
+    font-family: "SF Pro Display";
+    font-size: 14px;
+    color: rgb(208, 2, 27);
+    margin: 0;
+  }
+  & p {
+    margin: 10px 0;
+    font-family: "SF Pro Display";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    width: 100%;
+  }
+  & .actions {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    & button {
+      margin-left: 10px;
+      border: none;
+      border-radius: 50%;
+      height: 36px;
+      width: 36px;
+      background-color: rgba(208, 2, 27, 0.1);
+      transition: 0.1s;
+      cursor: pointer;
+      &:hover {
+        background-color: rgba(208, 2, 27, 1);
+        color: white;
+        & i {
+          color: white;
+        }
+      }
+      & i {
+        color: #d0021b;
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+button.btn {
+  margin: 15px 0;
+  background-color: rgba(208, 2, 27, 0.1);
+  border-radius: 8px;
+  border: none;
+  height: 40px;
+  width: 240px;
+  transition: 0.1s;
+  cursor: pointer;
+  & span {
+    transition: 0.1s;
+    color: #d0021b;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: "SF Pro Display";
+  }
+  &:hover {
+    background-color: rgba(208, 2, 27, 1);
+    & span {
+      color: white;
+    }
+  }
+}
+
+.video {
+  width: 210px;
+  height: 160px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 20px 40px 0px rgba(208, 2, 27, 0.3);
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover {
+    margin-bottom: -6px;
+    margin-right: -6px;
+    box-shadow: 0px 10px 40px 0px rgba(208, 2, 27, 0.3);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(208, 2, 27, 0.7);
+  }
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  & button.play {
+    margin: 0;
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    border: 8px solid rgba(255, 255, 255, 0.5);
+    background-clip: padding-box;
+    top: calc(50% - 36px);
+    left: calc(50% - 36px);
+    z-index: 10;
+    background-color: white;
+    cursor: pointer;
+    &:hover {
+      border: 0px;
+      & .arrow-right {
+        left: calc(50% - 10px);
+        top: calc(50% - 20px);
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+
+        border-left: 30px solid rgba(208, 2, 27, 1);
+      }
+    }
+    & .arrow-right {
+      position: absolute;
+      left: calc(50% - 5px);
+      top: calc(50% - 10px);
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+
+      border-left: 15px solid rgba(208, 2, 27, 1);
+    }
+  }
+}
+
+.extender {
+  flex: 1 1 auto;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  & p {
+    font-size: 14;
+    font-family: "SF Pro Display";
+    font-weight: 400;
+    color: #bbb;
+    width: 100%;
+    text-align: center;
+  }
+  & ul {
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    & li {
+      list-style-type: none;
+      display: inline;
+      & a {
+        cursor: pointer;
+        padding: 0 10px;
+        font-size: 14;
+        font-family: "SF Pro Display";
+        color: rgba(208, 2, 27, 1);
+        &:hover {
+          border-bottom: 1px solid rgba(208, 2, 27, 0.6);
+        }
+      }
+    }
+  }
+}
+
+.highlighted-comment {
+  background-color: rgba(255, 255, 0, 0.5);
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding: 0 15px;
+  }
+  .section {
+    margin-top: 20px;
+  }
+  .column {
+    margin: 0;
+  }
+  .row {
+    flex-wrap: wrap;
+    margin: 0;
+    & .card,
+    .column {
+      margin: 10px 0;
+      width: 100%;
+      & .left,
+      .right {
+        width: 100%;
+      }
+    }
+  }
+  .card {
+    padding: 20px;
+    margin: 10px 0 !important;
+    & .left,
+    .right {
+      width: 100%;
+    }
+  }
+}

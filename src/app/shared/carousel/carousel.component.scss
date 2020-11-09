@@ -1,0 +1,100 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+  width: 1072px;
+  margin: 30px 0;
+  margin-left: -56px;
+  margin-right: -56px;
+}
+.list {
+  display: flex;
+  width: 940px;
+  & .card {
+    width: 220px;
+    height: 250px;
+    background-color: white;
+    margin: 0 10px;
+    padding: 20px;
+    cursor: pointer;
+    transition: 0.1s;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    & img {
+      width: 80px;
+      height: 80px;
+      border-radius: 12px;
+    }
+    &:hover {
+      margin-top: -10px;
+      box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.1);
+      & p {
+        color: #d0021b;
+      }
+    }
+  }
+}
+
+.next,
+.prev {
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  background-color: rgba(74, 74, 74, 0.1);
+  border: none;
+  border-radius: 50%;
+  align-self: center;
+  background-color: rgba(208, 2, 27, 0.1);
+  & i {
+    color: #d0021b;
+    font-size: 24px;
+  }
+  &:disabled {
+    background-color: rgb(74, 74, 74, 0.1);
+    & i {
+      color: black;
+    }
+  }
+  &:hover {
+    background-color: rgba(208, 2, 27, 1);
+    color: white;
+    & i {
+      color: white;
+    }
+    &:disabled {
+      background-color: rgb(74, 74, 74, 0.1);
+      & i {
+        color: black;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  :host {
+    width: 90%;
+    margin: 0;
+  }
+  .list {
+    width: 100%;
+    justify-content: space-around;
+    & .card {
+      margin: 0 5px !important;
+      height: auto !important;
+      padding: 5px;
+      & p {
+        display: none;
+      }
+      & img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  .card {
+    width: 40%;
+  }
+}

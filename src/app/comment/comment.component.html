@@ -1,0 +1,17 @@
+<div class="content">
+  <div class="row" *ngFor="let c of comments">
+    <img src="https://hikari.noyu.me/blog/2017-07-30-optimising-circular-avatars/avatar_circle_clean.png" alt="">
+    <div class="column">
+      <h4>Labeeba Al Amer</h4>
+      <p>{{c.text}}</p>
+      <button (click)="remove(c.id)">resolve</button>
+    </div>
+    <p class="time">10:33</p>
+  </div>
+</div>
+<div class="row">
+  <form  [formGroup]="form" (submit)="submit()">
+    <input type="text" placeholder="Add comment" formControlName="text">
+    <button class="send" type="submit">send</button>
+  </form>
+</div>

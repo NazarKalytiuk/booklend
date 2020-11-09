@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "SF Mono";
+  src: url(assets/fonts/SF-Mono-Font/SFMono-Regular.otf);
+}
+@font-face {
+  font-family: "SF Mono Heavy";
+  src: url(assets/fonts/SF-Mono-Font/SFMono-Heavy.otf);
+}
+
+@font-face {
+  font-family: "SF Pro";
+  src: url(assets/fonts/SF_Pro-Font/SFProDisplay-Black.ttf);
+}
+
+@font-face {
+  font-family: "SF Pro Rounded";
+  src: url(assets/fonts/SF-Pro-Rounded-Regular.ttf);
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url(assets/fonts/SF-Pro-Display/SFProDisplay-Regular.ttf);
+}
+
+@font-face {
+  font-family: "SF Pro Display Light Italic";
+  src: url(assets/fonts/SF-Pro-Display/SFProDisplay-LightItalic.ttf);
+}
+
+@font-face {
+  font-family: "SF Pro Display Heavy";
+  src: url(assets/fonts/SF-Pro-Display/SFProDisplay-Heavy.ttf);
+}
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
